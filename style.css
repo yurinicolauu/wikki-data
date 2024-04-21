@@ -263,6 +263,9 @@
 		color: var(--text2);
 	}
 }
+#Quote {
+	
+}
 
 /* Breakpoints */
 @media (max-width: 640px) {
