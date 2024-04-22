@@ -25,7 +25,6 @@
 	--background04: #373842;
 	--background05: #525364;
 	--background-deg: linear-gradient(160deg, #24242b, #1b1b1f, #1b1b1f);
-	--background-deg02: linear-gradient(340deg, #212127, #1b1b1f, #1b1b1f);
 	--primary-deg: linear-gradient(160deg, #35d3a4, #07835e, #35d3a4);
 
 	--border: black;
@@ -159,6 +158,10 @@
 		gap: 64px;
 	}
 
+	& .container {
+		max-width: 1240px;
+	}
+
 	& .heroimg {
 		display: block;
 		width: 50%;
@@ -213,7 +216,7 @@
 
 	& .container {
 		height: auto;
-		max-width: 1320px;
+		max-width: 1460px;
 	}
 
 	& p {
@@ -303,7 +306,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: 320px;
+		width: 290px;
 		height: 100%;
 
 		&:hover img {
@@ -318,7 +321,6 @@
 }
 #CTA {
 	padding: calc(var(--padding)*1.5);
-	background: var(--background-deg02);
 
 	& .button {
 		margin: 0;
@@ -359,7 +361,7 @@
 	margin-bottom: 21px;
 
 	& .background {
-		background: var(--primary-deg);
+		background-color: var(--primary);
 
 		border-radius: 12px;
 
@@ -375,7 +377,7 @@
 	}
 
 	& .box {
-		background-color: var(--background02);
+		background-color: var(--background03);
 		padding: 80px 80px 64px 80px;
 		border-radius: 12px;
 
