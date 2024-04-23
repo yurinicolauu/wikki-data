@@ -1,30 +1,86 @@
 @import url(./reset.css);
 
 /* Variáveis Light Mode*/
-:root.light {
-	--background01: #1b1b1f;
-	--background02: #202127;
+body:not(.dark) {
+	--background00: #fff;
+	--background01: #fff;
+	--background01-deg: #1a1a1e00;
+	--background02: #f6f6f7;
+	--background03: rgba(142, 150, 170, 0.14);
+	--background04: #202020;
+	--background05: #c2c2c4;
+	--background-deg: #fff;
+	--primary-deg: linear-gradient(160deg, #35d3a4, #07835e, #35d3a4);
 
-	--gray-soft: rgba(101, 117, 133, 0.16);
+	--border: #e2e2e3;
 
-	--text1: rgba(255, 255, 245, 0.86);
-	--text2: rgba(235, 235, 245, 0.6);
-	--text3: rgba(235, 235, 245, 0.38);
+	--gray-soft: rgba(142, 150, 170, 0.14);
+
+	--text1: #050505;
+	--text2: rgba(60, 60, 67, 0.78);
+	--text3: #3c3c438f;
+
+	--padding-medium: calc((var(--padding) / 1.5));
+	--padding-small: calc((var(--padding) / 2));
 
 	--primary: #1bbd8c;
+	--primary-dark: #53776c;
 	--primary-light: #26dda6;
 
-	& .toggle-mode {
+	& #Header {
+		background-color: var(--background01);
+		border-bottom: 1px solid var(--border);
+	}
+
+	& *.dark {
+		display: none;
+	}
+
+	& #Footer #email * {
+		stroke: var(--background01);
+	}
+
+	& #logo path#letters {
+		fill: #b2b2b2;
+	}
+
+	& #Partners {
+		& article:hover {
+			background-color: var(--gray-soft);
+		}
+
+		& img {
+			filter: grayscale();
+		}
+	}
+
+	& #toggle-mode {
 		justify-content: flex-start;
+
+		& svg#sun path {
+			stroke: var(--text2);
+		}
 
 		& svg#moon {
 			display: none;
 		}
 	}
+
+	& img#logo {
+		display: none;
+	}
+
+	& #Quote .box {
+		border: 1px solid var(--background04);
+	}
+
+	& #Features .boxes .text {
+		border: 1px solid var(--background04);
+	}
 }
 
 /* Variáveis Dark Mode*/
-:root.dark {
+body.dark {
 	--background00: #16161a;
 	--background01: #1b1b1f;
 	--background01-deg: #1a1a1e00;
@@ -39,7 +95,7 @@
 
 	--gray-soft: #65758529;
 
-	--text1: #fffff5db;
+	--text1: rgba(255, 255, 245, 0.859);
 	--text2: rgba(235, 235, 245, 0.6);
 	--text3: rgba(235, 235, 245, 0.38);
 
@@ -50,7 +106,11 @@
 	--primary-dark: #53776c;
 	--primary-light: #26dda6;
 
-	& .toggle-mode {
+	& *.light {
+		display: none;
+	}
+
+	& #toggle-mode {
 		justify-content: flex-end;
 
 		& svg#sun {
@@ -111,7 +171,6 @@
 		width: 48px;
 		height: 48px;
 		font-size: 24px;
-		transition: background-color 0.25s;
 
 		background-color: var(--gray-soft);
 	}
@@ -146,6 +205,17 @@
 }
 #Header {
 	padding: 0 var(--padding-small);
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 1000;
+
+	border-bottom: 1px solid transparent;
+
+	&.scrolled {
+		background-color: var(--background01);
+		border-bottom: 1px solid var(--border);
+	}
 
 	& .container {
 		height: 64px;
@@ -159,11 +229,7 @@
 		width: 100%;
 	}
 
-	& img {
-		width: 80px;
-	}
-
-	& .toggle-mode {
+	& #toggle-mode {
 		background-color: var(--background03);
 
 		border-radius: 12px;
@@ -176,6 +242,8 @@
 		align-items: center;
 
 		padding: 1px;
+
+		cursor: pointer;
 
 		& .switch {
 			height: 20px;
@@ -204,9 +272,9 @@
 	}
 }
 #Hero {
-	padding: calc(var(--padding) * 1.5) var(--padding) var(--padding) var(--padding);
+	padding: calc(var(--padding) * 1.5) var(--padding) var(--padding)
+		var(--padding);
 	background: var(--background-deg);
-	margin-top: -64px;
 
 	& .main {
 		text-align: left;
@@ -226,7 +294,7 @@
 	}
 
 	& img {
-		width: 120%;
+		width: 140%;
 		object-position: 0%;
 	}
 
@@ -484,7 +552,7 @@
 			font-size: 14px;
 			line-height: 24px;
 			color: var(--text2);
-			font-weight: 300;
+			font-weight: 400;
 		}
 
 		& img {
@@ -684,9 +752,14 @@
 		}
 	}
 
-	& svg {
+	& svg#email {
 		height: 24px;
 		width: 24px;
+	}
+
+	& svg#linkedin {
+		height: 20px;
+		width: 20px;
 	}
 
 	& #email * {
@@ -694,7 +767,7 @@
 	}
 
 	& #linkedin * {
-		stroke: var(--text2);
+		stroke: var(--text3);
 		stroke-width: 2px;
 	}
 }
