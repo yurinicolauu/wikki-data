@@ -288,7 +288,7 @@ body.dark {
 	}
 }
 #Hero {
-	padding: 144px var(--padding) var(--padding) var(--padding);
+	padding: 120px var(--padding) var(--padding-medium) var(--padding);
 	background: var(--background-deg);
 
 	& .main {
@@ -310,8 +310,6 @@ body.dark {
 
 		width: 50%;
 		overflow: visible;
-
-		
 	}
 
 	& img {
@@ -834,11 +832,22 @@ body.dark {
 		--features-direction: column;
 		--faces-img-width: 100vw;
 
-		& #CTA, #Partners {
+		& #Hero {
+			& .heroimg {
+				width: 60vw;
+			}
+
+			& .left {
+				max-width: 460px;
+			}
+		}
+
+		& #CTA,
+		#Partners {
 			margin: 48px 0;
 		}
 
-		& #CTA .container{
+		& #CTA .container {
 			display: flex;
 			flex-direction: column;
 			gap: 24px;
@@ -870,18 +879,20 @@ body.dark {
 			margin-top: 80px;
 
 			& .container {
-        padding: var(--padding) 0;
+				padding: var(--padding) 0;
+				gap: 32px;
 
 				& .logo {
 					display: flex;
-					
+					gap: 28px;
+
 					align-items: center;
 
 					& p {
 						text-align: center;
 					}
 				}
-      }
+			}
 		}
 
 		& #Features .box {
@@ -913,10 +924,14 @@ body.dark {
 		}
 
 		& #Hero #quebra02 {
-			display: flex;
+			display: none;
 		}
 
 		& #Hero #quebra01 {
+			display: none;
+		}
+
+		& #Hero #quebra03 {
 			display: none;
 		}
 	}
@@ -943,6 +958,10 @@ body.dark {
 
 		--features-direction: row;
 		--faces-img-width: 100vw;
+
+		& #Hero .heroimg {
+				min-width: 380px;
+			}
 
 		& #Hero #quebra02 {
 			display: flex;
