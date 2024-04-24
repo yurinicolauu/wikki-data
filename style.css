@@ -20,9 +20,6 @@ body:not(.dark) {
 	--text2: rgba(60, 60, 67, 0.78);
 	--text3: #3c3c438f;
 
-	--padding-medium: calc((var(--padding) / 1.5));
-	--padding-small: calc((var(--padding) / 2));
-
 	--primary: #1bbd8c;
 	--primary-dark: #53776c;
 	--primary-light: #26dda6;
