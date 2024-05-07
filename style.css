@@ -294,7 +294,7 @@ body.dark {
 		display: flex;
 		flex-direction: column;
 		flex-direction: var(--hero-direction);
-		gap: 64px;
+		gap: 56px;
 	}
 
 	& .container {
@@ -305,17 +305,17 @@ body.dark {
 		display: flex;
 		justify-content: var(--hero-img-align);
 
-		width: 50%;
+		width: 100%;
 		overflow: visible;
 	}
 
 	& img {
-		width: 140%;
+		width: 100%;
 		object-position: 0%;
 	}
 
 	& .left {
-		width: var(--hero-left-width);
+		width: 100%;
 		z-index: 2;
 	}
 
@@ -324,7 +324,6 @@ body.dark {
 		font-size: var(--h1);
 		font-weight: 700;
 		letter-spacing: -0.4px;
-		white-space: var(--hero-wrap);
 
 		display: flex;
 		justify-content: var(--hero-text-justify);
@@ -334,7 +333,6 @@ body.dark {
 		font-size: var(--tagline);
 		line-height: var(--tagline-height);
 		font-weight: 500;
-		white-space: var(--hero-wrap);
 
 		display: flex;
 		justify-content: var(--hero-text-justify);
@@ -366,15 +364,31 @@ body.dark {
 	& p {
 		margin: 0 auto;
 		padding-top: 10px;
-		margin-bottom: 32px;
 
 		max-width: 320px;
 
 		text-align: center;
+	}
+
+	& #title {
+		font-size: 40px;
+		line-height: 46px;
+		max-width: 620px;
+		font-weight: 600;
+		text-align: center;
+		color: var(--text1);
+	}
+
+	& #description {
+		padding-top: 16px;
+		text-align: center;
 		line-height: 24px;
-		font-size: 16px;
-		font-weight: 500;
+		font-size: 14px;
+		font-weight: 480;
 		color: var(--text2);
+		max-width: 620px;
+
+		margin-bottom: var(--padding);
 	}
 
 	& svg {
@@ -696,7 +710,7 @@ body.dark {
 			flex: 3;
 
 			display: flex;
-			align-items: end;
+			align-items: center;
 
 			& img {
 				width: 100%;
@@ -844,9 +858,6 @@ body.dark {
 		--faces-img-width: 100vw;
 
 		& #Hero {
-			& .heroimg {
-				width: 60vw;
-			}
 
 			& .left {
 				max-width: 460px;
@@ -929,22 +940,6 @@ body.dark {
 				max-height: 300px;
 			}
 		}
-
-		& #Features .boxes .img {
-			display: none;
-		}
-
-		& #Hero #quebra02 {
-			display: none;
-		}
-
-		& #Hero #quebra01 {
-			display: none;
-		}
-
-		& #Hero #quebra03 {
-			display: none;
-		}
 	}
 }
 @media (min-width: 640px) {
@@ -971,15 +966,7 @@ body.dark {
 		--faces-img-width: 100vw;
 
 		& #Hero .heroimg {
-				min-width: 380px;
-			}
-
-		& #Hero #quebra02 {
-			display: flex;
-		}
-
-		& #Hero #quebra01 {
-			display: none;
+			min-width: 380px;
 		}
 	}
 }
@@ -1003,14 +990,6 @@ body.dark {
 
 		--features-direction: row;
 		--faces-img-width: 42%;
-
-		& #Hero #quebra02 {
-			display: none;
-		}
-
-		& #Hero #quebra01 {
-			display: flex;
-		}
 	}
 }
 @media (min-width: 1280px) {
